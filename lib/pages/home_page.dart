@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kasteelhuizeharmelen/pages/contact_page.dart';
 import 'package:kasteelhuizeharmelen/widgets/buttons.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:kasteelhuizeharmelen/widgets/design/bottom_ui.dart';
+import 'package:kasteelhuizeharmelen/widgets/functions.dart';
 
 // HomePage converted to StatefulWidget
 class HomePage extends StatefulWidget {
@@ -11,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // app URLs
   final facebookURL = Uri.parse(
     'https://www.facebook.com/kasteelhuizeharmelen/',
   );
@@ -82,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                       top: 30,
                       left: 10,
                       child: Image.asset(
-                        'assets/images/Logo_big.png',
+                        'assets/images/logo.png',
                         width: 90,
                         height: 71,
                       ),
@@ -197,7 +200,7 @@ class _HomePageState extends State<HomePage> {
 
                 // scrollable content can go here
                 SizedBox(
-                  height: 735,
+                  height: 780,
                   width: MediaQuery.of(context).size.width,
                   child: Stack(
                     children: [
@@ -208,7 +211,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             // title
                             Padding(
-                              padding: const EdgeInsets.only(top: 20),
+                              padding: const EdgeInsets.only(top: 40),
                               child: Text(
                                 'Welkom bij vergaderlocatie\nKasteel Huize Harmelen',
                                 textAlign: TextAlign.center,
@@ -254,238 +257,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
 
-                      // bottom image
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Stack(
-                          children: [
-                            // background
-                            Image.asset(
-                              'assets/images/Bottom_image.png',
-                              width: MediaQuery.of(context).size.width,
-                            ),
-
-                            // content
-                            /*
-                            Image.asset(
-                              'assets/images/Bottom_text.png',
-                              width: MediaQuery.of(context).size.width,
-                            ),
-                            */
-                          ],
-                        ),
-                      ),
-
-                      // contact info
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10, bottom: 15),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment:
-                                  MainAxisAlignment
-                                      .end, // Aligns Column content to the bottom
-                              children: [
-                                // contact info title
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 5),
-                                  child: Text(
-                                    'Kasteel Huize Harmelen',
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      fontFamily: "CustomFont",
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-
-                                // contact info
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 3),
-                                  child: Text(
-                                    'Kasteellaan 1\n3481GR Harmelen\n\n0348445123\n06 53237572\n06 52034484\n',
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      fontFamily: "CustomFont",
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-
-                                // mail
-                                Text(
-                                  'info@kasteelhuizeharmelen.nl',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    fontFamily: "CustomFont",
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-
-                            Spacer(), // go to the end of the row
-                            // next column: volg ons
-                            Padding(
-                              padding: const EdgeInsets.only(right: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment
-                                        .end, // Aligns Column content to the bottom
-                                children: [
-                                  // TITLE
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 3),
-                                    child: Text(
-                                      'Volg ons',
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                        fontFamily: "CustomFont",
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-
-                                  // FACEBOOK
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Image.asset(
-                                        'assets/images/Facebook.png',
-                                        width: 30,
-                                        height: 30,
-                                      ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          launchUrl(facebookURL);
-                                        },
-                                        child: Text(
-                                          'Facebook',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontFamily: "CustomFont",
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            decoration:
-                                                TextDecoration.underline,
-                                            decorationColor: Colors.white,
-                                            decorationThickness: 1.5,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-
-                                  // LINKEDIN
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Image.asset(
-                                        'assets/images/LinkedIn.png',
-                                        width: 30,
-                                        height: 30,
-                                      ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          launchUrl(linkedinURL);
-                                        },
-                                        child: Text(
-                                          'LinkedIn',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontFamily: "CustomFont",
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            decoration:
-                                                TextDecoration.underline,
-                                            decorationColor: Colors.white,
-                                            decorationThickness: 1.5,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-
-                                  // YouTube
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Image.asset(
-                                        'assets/images/Youtube.png',
-                                        width: 30,
-                                        height: 30,
-                                      ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          launchUrl(youtubeURL);
-                                        },
-                                        child: Text(
-                                          'YouTube',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontFamily: "CustomFont",
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            decoration:
-                                                TextDecoration.underline,
-                                            decorationColor: Colors.white,
-                                            decorationThickness: 1.5,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-
-                                  // Instagram
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Image.asset(
-                                        'assets/images/Instagram.png',
-                                        width: 30,
-                                        height: 30,
-                                      ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          launchUrl(instagramURL);
-                                        },
-                                        child: Text(
-                                          'Instagram',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontFamily: "CustomFont",
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                            decoration:
-                                                TextDecoration.underline,
-                                            decorationColor: Colors.white,
-                                            decorationThickness: 1.5,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      // bottom ui
+                      BottomUI(),
                     ],
                   ),
                 ),
@@ -552,7 +325,7 @@ class _HomePageState extends State<HomePage> {
                     MenuButton(
                       text: "Contact",
                       onPressed: () {
-                        print('contact');
+                        navigate(context, 100, ContactPage());
                       },
                     ),
 

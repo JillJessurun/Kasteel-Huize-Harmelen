@@ -68,7 +68,7 @@ class Background extends StatelessWidget {
           // Logo centered on the screen
           Center(
             child: Image.asset(
-              "assets/images/Logo_big.png", // Make sure your logo is in the correct folder
+              "assets/images/logo.png", // Make sure your logo is in the correct folder
               width: 220, // Adjust the size as needed
               height: 175,
             ),
