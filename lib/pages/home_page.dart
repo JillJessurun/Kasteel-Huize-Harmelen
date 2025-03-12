@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kasteelhuizeharmelen/pages/contact_page.dart';
+import 'package:kasteelhuizeharmelen/pages/fotogalerij_page.dart';
+import 'package:kasteelhuizeharmelen/pages/offerte_page.dart';
+import 'package:kasteelhuizeharmelen/pages/particulier_page.dart';
+import 'package:kasteelhuizeharmelen/pages/zakelijk_page.dart';
 import 'package:kasteelhuizeharmelen/widgets/buttons.dart';
 import 'package:kasteelhuizeharmelen/widgets/design/bottom_ui.dart';
 import 'package:kasteelhuizeharmelen/widgets/functions.dart';
@@ -304,21 +308,21 @@ class _HomePageState extends State<HomePage> {
                     MenuButton(
                       text: "Zakelijk",
                       onPressed: () async {
-                        print('zakelijk');
+                        navigate(context, 100, ZakelijkPage());
                       },
                     ),
 
                     MenuButton(
                       text: "Particulier",
                       onPressed: () {
-                        print('particulier');
+                        navigate(context, 100, ParticulierPage());
                       },
                     ),
 
                     MenuButton(
                       text: "Fotogalerij",
                       onPressed: () {
-                        print('fotogalerij');
+                        navigate(context, 100, FotogalerijPage());
                       },
                     ),
 
@@ -332,7 +336,7 @@ class _HomePageState extends State<HomePage> {
                     MenuButton(
                       text: "Offerte aanvragen",
                       onPressed: () {
-                        print('offerte aanvragen');
+                        navigate(context, 100, OffertePage());
                       },
                     ),
                   ],

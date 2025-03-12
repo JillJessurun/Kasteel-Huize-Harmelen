@@ -61,7 +61,11 @@ flutter:
   fonts:
     - family: CustomFont
       fonts:
-        - asset: assets/fonts/garamond.ttf
+        - asset: assets/fonts/garamond_light.ttf
+    - family: Bold
+      fonts:
+        - asset: assets/fonts/garamond_bold.ttf
+
 
 
   # To add assets to your application, add an assets section, like this:

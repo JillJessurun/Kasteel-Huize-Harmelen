@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kasteelhuizeharmelen/widgets/buttons.dart';
 
 class PageUI extends StatelessWidget {
   final String backgroundPath;
@@ -35,9 +36,9 @@ class PageUI extends StatelessWidget {
 
           // logo
           Padding(
-            padding: const EdgeInsets.only(top: 17, left: 10),
+            padding: const EdgeInsets.only(top: 17),
             child: Align(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.topCenter,
               child: Image.asset(
                 'assets/images/logo.png',
                 width: 90,
@@ -45,6 +46,9 @@ class PageUI extends StatelessWidget {
               ),
             ),
           ),
+
+          // back button
+          HomeButton(),
         ],
       ),
     );

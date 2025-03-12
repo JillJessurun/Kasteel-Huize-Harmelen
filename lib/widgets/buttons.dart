@@ -58,12 +58,12 @@ class HomeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 15),
+      padding: const EdgeInsets.only(bottom: 14),
       child: Align(
         alignment: Alignment.bottomLeft,
         child: SizedBox(
-          width: 60,
-          height: 60,
+          width: 45,
+          height: 45,
           child: IconButton(
             onPressed: () {
               navigate(context, 150, HomePage());
@@ -103,9 +103,9 @@ class InfoButton extends StatelessWidget {
           style: TextButton.styleFrom(
             backgroundColor: Color.fromARGB(
               255,
-              41,
-              68,
-              53,
+              48,
+              83,
+              64,
             ), // Button background color
             foregroundColor: Colors.white, // Text color Button size
             shape: RoundedRectangleBorder(

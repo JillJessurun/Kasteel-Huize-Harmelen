@@ -23,10 +23,7 @@ class _StartPageState extends State<ContactPage> {
     return Stack(
       children: [
         // page UI
-        PageUI(backgroundPath: "assets/images/topbackground.jpg"),
-
-        // back button
-        HomeButton(),
+        PageUI(backgroundPath: "assets/images/top_background.png"),
 
         // page content
         Contact(),
@@ -42,7 +39,7 @@ class Contact extends StatelessWidget {
   Widget build(Object context) {
     return // Contact Info
     Padding(
-      padding: const EdgeInsets.only(top: 120, left: 20),
+      padding: const EdgeInsets.only(top: 120, left: 20, right: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -50,11 +47,11 @@ class Contact extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 5),
             child: Text(
-              'Contact',
+              'Contact -> altijd binnen 24 uur onze reactie.',
               textAlign: TextAlign.left,
               style: TextStyle(
-                fontFamily: "CustomFont",
-                fontSize: 18,
+                fontFamily: "Bold",
+                fontSize: 19,
                 fontWeight: FontWeight.bold,
                 color: Color.fromARGB(255, 41, 68, 53),
                 decoration: TextDecoration.none,
@@ -83,7 +80,7 @@ class Contact extends StatelessWidget {
               style: TextStyle(
                 fontFamily: "CustomFont",
                 fontSize: 14,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.normal,
                 color: Color.fromARGB(255, 41, 68, 53),
                 decoration: TextDecoration.none,
               ),
@@ -95,7 +92,7 @@ class Contact extends StatelessWidget {
             style: TextStyle(
               fontFamily: "CustomFont",
               fontSize: 14,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.normal,
               color: Color.fromARGB(255, 41, 68, 53),
               decoration: TextDecoration.none,
             ),
@@ -104,14 +101,14 @@ class Contact extends StatelessWidget {
           // more info
           // route
           Padding(
-            padding: const EdgeInsets.only(bottom: 10, top: 80),
+            padding: const EdgeInsets.only(bottom: 10, top: 90),
             child: Text(
               'Routebeschrijving:',
               textAlign: TextAlign.left,
               style: TextStyle(
                 fontFamily: "CustomFont",
                 fontSize: 16,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.normal,
                 color: Color.fromARGB(255, 41, 68, 53),
                 decoration: TextDecoration.none,
               ),
@@ -137,7 +134,7 @@ class Contact extends StatelessWidget {
               style: TextStyle(
                 fontFamily: "CustomFont",
                 fontSize: 16,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.normal,
                 color: Color.fromARGB(255, 41, 68, 53),
                 decoration: TextDecoration.none,
               ),
