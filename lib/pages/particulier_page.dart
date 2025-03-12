@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:kasteelhuizeharmelen/pages/catering_page.dart';
+import 'package:kasteelhuizeharmelen/pages/home_page.dart';
+import 'package:kasteelhuizeharmelen/widgets/buttons.dart';
 import 'package:kasteelhuizeharmelen/widgets/design/page_ui.dart';
+import 'package:kasteelhuizeharmelen/widgets/functions.dart';
+
+// website
+final webURL = Uri.parse(
+  'https://www.kasteelhuizeharmelen.nl/nieuws/catering/',
+);
 
 // particulier page
 class ParticulierPage extends StatefulWidget {
@@ -16,7 +25,10 @@ class _ParticulierPageState extends State<ParticulierPage> {
     return Stack(
       children: [
         // page UI
-        PageUI(backgroundPath: "assets/images/top_background.png"),
+        PageUI(
+          backgroundPath: "assets/images/top_background.png",
+          backWidget: HomePage(),
+        ),
 
         // page content
         Padding(
@@ -176,21 +188,46 @@ class _ParticulierPageState extends State<ParticulierPage> {
 
                 // line
                 Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom: 30),
+                  padding: const EdgeInsets.only(top: 20, bottom: 20),
                   child: Divider(color: Colors.grey, thickness: 1),
                 ),
 
-                Text(
-                  'Catering: \nhttps://www.kasteelhuizeharmelen.nl/nieuws/catering/\n\n'
-                  'Bel of mail ons voor meer informatie en/of een prijsopgave. '
-                  'U krijgt altijd binnen 24 uur een reactie.',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontFamily: "CustomFont",
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal,
-                    color: Color.fromARGB(255, 41, 68, 53),
-                    decoration: TextDecoration.none,
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 9),
+                  child: Text(
+                    'Catering:',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontFamily: "CustomFont",
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      color: Color.fromARGB(255, 41, 68, 53),
+                      decoration: TextDecoration.none,
+                    ),
+                  ),
+                ),
+
+                // button
+                InfoButton(
+                  text: "Lees meer",
+                  width: 100,
+                  height: 35,
+                  onPressed: () => navigate(context, 100, CateringPage()),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Text(
+                    'Bel of mail ons voor meer informatie en/of een prijsopgave. '
+                    'U krijgt altijd binnen 24 uur een reactie.',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontFamily: "CustomFont",
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      color: Color.fromARGB(255, 41, 68, 53),
+                      decoration: TextDecoration.none,
+                    ),
                   ),
                 ),
 

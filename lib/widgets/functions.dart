@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+bool home = true; // check variable whether to go home on pageUI
+
 void navigate(context, int durationMilliseconds, StatefulWidget nextPage) {
   // navigate to other page
   Navigator.pushReplacement(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kasteelhuizeharmelen/pages/home_page.dart';
 import 'package:kasteelhuizeharmelen/widgets/design/page_ui.dart';
 
 // zakelijk page
@@ -16,7 +17,10 @@ class _ZakelijkPageState extends State<ZakelijkPage> {
     return Stack(
       children: [
         // page UI
-        PageUI(backgroundPath: "assets/images/top_background.png"),
+        PageUI(
+          backgroundPath: "assets/images/top_background.png",
+          backWidget: HomePage(),
+        ),
 
         // page content
         Padding(

@@ -3,8 +3,13 @@ import 'package:kasteelhuizeharmelen/widgets/buttons.dart';
 
 class PageUI extends StatelessWidget {
   final String backgroundPath;
+  final StatefulWidget backWidget;
 
-  const PageUI({super.key, required this.backgroundPath});
+  const PageUI({
+    super.key,
+    required this.backgroundPath,
+    required this.backWidget,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +53,7 @@ class PageUI extends StatelessWidget {
           ),
 
           // back button
-          HomeButton(),
+          HomeButton(backWidget: backWidget),
         ],
       ),
     );

@@ -53,7 +53,9 @@ class MenuButton extends StatelessWidget {
 
 // back home button
 class HomeButton extends StatelessWidget {
-  const HomeButton({super.key});
+  final StatefulWidget backWidget;
+
+  const HomeButton({super.key, required this.backWidget});
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,7 @@ class HomeButton extends StatelessWidget {
           height: 45,
           child: IconButton(
             onPressed: () {
-              navigate(context, 150, HomePage());
+              navigate(context, 150, backWidget);
             },
             icon: Image.asset('assets/images/back.png'),
           ),

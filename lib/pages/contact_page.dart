@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kasteelhuizeharmelen/pages/home_page.dart';
 import 'package:kasteelhuizeharmelen/widgets/buttons.dart';
 import 'package:kasteelhuizeharmelen/widgets/design/page_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -23,7 +24,10 @@ class _StartPageState extends State<ContactPage> {
     return Stack(
       children: [
         // page UI
-        PageUI(backgroundPath: "assets/images/top_background.png"),
+        PageUI(
+          backgroundPath: "assets/images/top_background.png",
+          backWidget: HomePage(),
+        ),
 
         // page content
         Contact(),

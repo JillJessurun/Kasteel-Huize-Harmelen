@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:kasteelhuizeharmelen/pages/home_page.dart';
+import 'package:kasteelhuizeharmelen/widgets/buttons.dart';
 import 'package:kasteelhuizeharmelen/widgets/design/page_ui.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+// website
+final webURL = Uri.parse(
+  'https://www.kasteelhuizeharmelen.nl/offerte-aanvragen/',
+);
 
 // offerte page
 class OffertePage extends StatefulWidget {
@@ -16,9 +24,13 @@ class _OffertePageState extends State<OffertePage> {
     return Stack(
       children: [
         // page UI
-        PageUI(backgroundPath: "assets/images/top_background.png"),
+        PageUI(
+          backgroundPath: "assets/images/top_background.png",
+          backWidget: HomePage(),
+        ),
 
         // page content
+        Offerte(),
       ],
     );
   }
@@ -29,7 +41,47 @@ class Offerte extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Padding(
+      padding: const EdgeInsets.only(top: 115, left: 20, right: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Vraag vrijblijvend een offerte aan. Altijd binnen 24 uur onze reactie.',
+            textAlign: TextAlign.left,
+            style: TextStyle(
+              fontFamily: "Bold",
+              fontSize: 19,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 41, 68, 53),
+              decoration: TextDecoration.none,
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(top: 30, bottom: 9),
+            child: Text(
+              'Offerte aanvragen:',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontFamily: "CustomFont",
+                fontSize: 16,
+                fontWeight: FontWeight.normal,
+                color: Color.fromARGB(255, 41, 68, 53),
+                decoration: TextDecoration.none,
+              ),
+            ),
+          ),
+
+          // button
+          InfoButton(
+            text: "Website",
+            width: 100,
+            height: 35,
+            onPressed: () => launchUrl(webURL),
+          ),
+        ],
+      ),
+    );
   }
 }
