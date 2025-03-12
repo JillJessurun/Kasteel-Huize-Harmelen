@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kasteelhuizeharmelen/pages/home_page.dart';
+import 'package:kasteelhuizeharmelen/pages/route_page.dart';
 import 'package:kasteelhuizeharmelen/widgets/buttons.dart';
 import 'package:kasteelhuizeharmelen/widgets/design/page_ui.dart';
+import 'package:kasteelhuizeharmelen/widgets/functions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // website
@@ -51,7 +53,7 @@ class Contact extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 5),
             child: Text(
-              'Contact -> altijd binnen 24 uur onze reactie.',
+              'Contact',
               textAlign: TextAlign.left,
               style: TextStyle(
                 fontFamily: "Bold",
@@ -125,7 +127,7 @@ class Contact extends StatelessWidget {
             width: 100,
             height: 35,
             onPressed: () {
-              print("HIER HEB JE EEN ROUTEBESCHRIJVING KUT");
+              navigate(context, 150, RoutePage());
             },
           ),
 

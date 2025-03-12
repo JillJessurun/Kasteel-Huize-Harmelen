@@ -47,7 +47,7 @@ class Offerte extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Vraag vrijblijvend een offerte aan. Altijd binnen 24 uur onze reactie.',
+            'Offerte aanvragen',
             textAlign: TextAlign.left,
             style: TextStyle(
               fontFamily: "Bold",
@@ -59,9 +59,10 @@ class Offerte extends StatelessWidget {
           ),
 
           Padding(
-            padding: const EdgeInsets.only(top: 30, bottom: 9),
+            padding: const EdgeInsets.only(top: 20, bottom: 20),
             child: Text(
-              'Offerte aanvragen:',
+              'Vraag vrijblijvend een offerte aan. U krijgt altijd binnen 24 uur onze reactie. '
+              'Klik hieronder om doorgestuurd te worden naar onze website:',
               textAlign: TextAlign.left,
               style: TextStyle(
                 fontFamily: "CustomFont",
@@ -75,10 +76,16 @@ class Offerte extends StatelessWidget {
 
           // button
           InfoButton(
-            text: "Website",
-            width: 100,
+            text: "Offerte aanvragen",
+            width: 160,
             height: 35,
             onPressed: () => launchUrl(webURL),
+          ),
+
+          // picture
+          Padding(
+            padding: const EdgeInsets.only(top: 140),
+            child: Image.asset('assets/gallery/kasteel40.jpg'),
           ),
         ],
       ),

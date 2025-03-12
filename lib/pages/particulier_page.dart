@@ -216,7 +216,7 @@ class _ParticulierPageState extends State<ParticulierPage> {
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top: 30),
                   child: Text(
                     'Bel of mail ons voor meer informatie en/of een prijsopgave. '
                     'U krijgt altijd binnen 24 uur een reactie.',

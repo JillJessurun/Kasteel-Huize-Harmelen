@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kasteelhuizeharmelen/pages/contact_page.dart';
 import 'package:kasteelhuizeharmelen/pages/fotogalerij_page.dart';
@@ -7,6 +8,7 @@ import 'package:kasteelhuizeharmelen/pages/zakelijk_page.dart';
 import 'package:kasteelhuizeharmelen/widgets/buttons.dart';
 import 'package:kasteelhuizeharmelen/widgets/design/bottom_ui.dart';
 import 'package:kasteelhuizeharmelen/widgets/functions.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // HomePage converted to StatefulWidget
 class HomePage extends StatefulWidget {
@@ -27,6 +29,10 @@ class _HomePageState extends State<HomePage> {
   final youtubeURL = Uri.parse('https://www.youtube.com/watch?v=x1Vv0x09_XE');
   final instagramURL = Uri.parse(
     'https://www.instagram.com/kasteelhuizeharmelen/',
+  );
+  // website
+  final meetingReviewURL = Uri.parse(
+    'https://meetingreview.com/evenementenlocatie/Utrecht/Harmelen',
   );
 
   bool _isMenuOpen = false; // State variable for menu visibility
@@ -227,33 +233,108 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                             ),
-
+                            /*
                             // text
                             Padding(
-                              padding: const EdgeInsets.only(top: 20),
+                              padding: const EdgeInsets.only(
+                                top: 20,
+                                left: 20,
+                                right: 20,
+                              ),
                               child: Text(
-                                'Kasteel Huize Harmelen is een sfeervol kasteeltje voor\n'
-                                'vergaderingen, lezingen, trainingen en workshops\n'
-                                'gelegen in het midden van de Randstad, goed te\n'
-                                'bereiken, met voldoende eigen parkeergelegenheid\n'
+                                'Kasteel Huize Harmelen is een sfeervol kasteeltje voor '
+                                'vergaderingen, lezingen, trainingen en workshops '
+                                'gelegen in het midden van de Randstad, goed te '
+                                'bereiken, met voldoende eigen parkeergelegenheid '
                                 'en volledige privacy.\n\n'
-                                'U kiest voor een persoonlijke, warme en kleinschalige\n'
-                                'setting in een eeuwenoud, uit circa 1270 daterend\n'
+                                'U kiest voor een persoonlijke, warme en kleinschalige '
+                                'setting in een eeuwenoud, uit circa 1270 daterend '
                                 'kasteeltje met vergaderruimte die u zal inspireren.\n\n'
-                                'Wij hopen dat onze hoogwaardige klantgerichtheid en\n'
-                                'service u zal aanspreken, prikkelen en motiveren.\n'
-                                'Reeds vanaf 2006 staan wij hiervoor tot uw beschikking.\n'
-                                'Een geheel vrijblijvende offerte op maat ontvangt u van\n'
+                                'Wij hopen dat onze hoogwaardige klantgerichtheid en '
+                                'service u zal aanspreken, prikkelen en motiveren. '
+                                'Reeds vanaf 2006 staan wij hiervoor tot uw beschikking. '
+                                'Een geheel vrijblijvende offerte op maat ontvangt u van '
                                 'ons altijd binnen 24 uur.\n\n'
-                                'Beleef Kasteel Huize Harmelen! U bent van harte\n'
-                                'welkom. Proef de sfeer op YouTube en bekijk ook onze\n'
+                                'Beleef Kasteel Huize Harmelen! U bent van harte '
+                                'welkom. Proef de sfeer op YouTube en bekijk ook onze '
                                 'beoordelingen op MeetingReview.com.',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: "CustomFont",
                                   fontSize: 15,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.normal,
                                   color: Color.fromARGB(255, 41, 68, 53),
+                                ),
+                              ),
+                            ),
+*/
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 20,
+                                left: 20,
+                                right: 20,
+                              ),
+                              child: Text.rich(
+                                textAlign: TextAlign.center,
+                                TextSpan(
+                                  text:
+                                      'Kasteel Huize Harmelen is een sfeervol kasteeltje voor '
+                                      'vergaderingen, lezingen, trainingen en workshops '
+                                      'gelegen in het midden van de Randstad, goed te '
+                                      'bereiken, met voldoende eigen parkeergelegenheid '
+                                      'en volledige privacy.\n\n'
+                                      'U kiest voor een persoonlijke, warme en kleinschalige '
+                                      'setting in een eeuwenoud, uit circa 1270 daterend '
+                                      'kasteeltje met vergaderruimte die u zal inspireren.\n\n'
+                                      'Wij hopen dat onze hoogwaardige klantgerichtheid en '
+                                      'service u zal aanspreken, prikkelen en motiveren. '
+                                      'Reeds vanaf 2006 staan wij hiervoor tot uw beschikking. '
+                                      'Een geheel vrijblijvende offerte op maat ontvangt u van '
+                                      'ons altijd binnen 24 uur.\n\n'
+                                      'Beleef Kasteel Huize Harmelen! U bent van harte '
+                                      'welkom. Proef de sfeer op ',
+                                  style: TextStyle(
+                                    fontFamily: "CustomFont",
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                    color: Color.fromARGB(255, 41, 68, 53),
+                                    decoration: TextDecoration.none,
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: 'YouTube', // Clickable part
+                                      style: TextStyle(
+                                        color: Color.fromARGB(255, 66, 126, 84),
+                                        decoration:
+                                            TextDecoration
+                                                .underline, // Underlined text
+                                      ),
+                                      recognizer:
+                                          TapGestureRecognizer()
+                                            ..onTap = () {
+                                              launchUrl(youtubeURL);
+                                            },
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          ' en bekijk ook onze beoordelingen op ',
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          'MeetingReview.com.', // Clickable part
+                                      style: TextStyle(
+                                        color: Color.fromARGB(255, 66, 126, 84),
+                                        decoration:
+                                            TextDecoration
+                                                .underline, // Underlined text
+                                      ),
+                                      recognizer:
+                                          TapGestureRecognizer()
+                                            ..onTap = () {
+                                              launchUrl(meetingReviewURL);
+                                            },
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -279,67 +360,77 @@ class _HomePageState extends State<HomePage> {
             right: _isMenuOpen ? 0 : -260, // Slide in/out
             top: 0,
             bottom: 0,
-            child: Container(
-              width: 260, // Square menu size
-              decoration: BoxDecoration(color: Color.fromARGB(255, 41, 68, 53)),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    // menu title
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Menu',
-                          style: TextStyle(
-                            fontFamily: "CustomFont",
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+            child: GestureDetector(
+              onHorizontalDragEnd: (DragEndDetails details) {
+                if (details.velocity.pixelsPerSecond.dx > -1000.0) {
+                  // drag right
+                  _toggleMenu();
+                }
+              },
+              child: Container(
+                width: 260, // Square menu size
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 41, 68, 53),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      // menu title
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Menu',
+                            style: TextStyle(
+                              fontFamily: "CustomFont",
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
 
-                    // menu buttons (Zakelijk, Particulier, etc.)
-                    MenuButton(
-                      text: "Zakelijk",
-                      onPressed: () async {
-                        navigate(context, 100, ZakelijkPage());
-                      },
-                    ),
+                      // menu buttons (Zakelijk, Particulier, etc.)
+                      MenuButton(
+                        text: "Zakelijk",
+                        onPressed: () async {
+                          navigate(context, 100, ZakelijkPage());
+                        },
+                      ),
 
-                    MenuButton(
-                      text: "Particulier",
-                      onPressed: () {
-                        navigate(context, 100, ParticulierPage());
-                      },
-                    ),
+                      MenuButton(
+                        text: "Particulier",
+                        onPressed: () {
+                          navigate(context, 100, ParticulierPage());
+                        },
+                      ),
 
-                    MenuButton(
-                      text: "Fotogalerij",
-                      onPressed: () {
-                        navigate(context, 100, FotogalerijPage());
-                      },
-                    ),
+                      MenuButton(
+                        text: "Fotogalerij",
+                        onPressed: () {
+                          navigate(context, 100, FotogalerijPage());
+                        },
+                      ),
 
-                    MenuButton(
-                      text: "Contact",
-                      onPressed: () {
-                        navigate(context, 100, ContactPage());
-                      },
-                    ),
+                      MenuButton(
+                        text: "Contact",
+                        onPressed: () {
+                          navigate(context, 100, ContactPage());
+                        },
+                      ),
 
-                    MenuButton(
-                      text: "Offerte aanvragen",
-                      onPressed: () {
-                        navigate(context, 100, OffertePage());
-                      },
-                    ),
-                  ],
+                      MenuButton(
+                        text: "Offerte aanvragen",
+                        onPressed: () {
+                          navigate(context, 100, OffertePage());
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

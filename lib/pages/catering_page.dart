@@ -91,6 +91,86 @@ class Catering extends StatelessWidget {
                 ),
               ),
             ),
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: DefaultTextStyle(
+                style: TextStyle(
+                  fontFamily: "Bold",
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                  color: Color.fromARGB(255, 41, 68, 53),
+                  decoration: TextDecoration.underline,
+                  decorationColor: Color.fromARGB(255, 41, 68, 53),
+                ),
+                child: Text('Koude hapjes', textAlign: TextAlign.left),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Text(
+                '- amuselepel met rivierkreeftjes en avocado\n\n'
+                '- amuselepel met carpaccio van ossenhaas en truffeldressing\n\n'
+                '- canape met roomkaas en zalm\n\n'
+                '- canape met filet americain en uitjes\n\n'
+                '- komkommer met bieslookkaas\n\n'
+                '- rolletje bresaola (gedroogde ossenhaas) met rucola en parmezaan\n\n'
+                '- rolletje vitello tonnatto (kalfsfricandeau en tonijnmousse)\n\n'
+                '- rolletje parmaham met frisse meloen\n\n'
+                '- blokje watermeloen met feta en munt\n\n'
+                '- witlofblaadjes gevuld met hollandse garnalen en avocado\n\n'
+                '- witlofblaadjes gevuld met hollandse garnelen en tomaat\n\n'
+                '- witlofblaadjes gevuld met gerookte zalm en avocado\n\n'
+                '- amuseschaaltje gevuld met tonijn/aardappelsalade\n\n'
+                '- amuseschaaltje met hummus en rauwkost staafjes\n\n'
+                '- reypenaar kaas met geconfijte gember\n',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontFamily: "CustomFont",
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                  color: Color.fromARGB(255, 41, 68, 53),
+                  decoration: TextDecoration.none,
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: DefaultTextStyle(
+                style: TextStyle(
+                  fontFamily: "Bold",
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                  color: Color.fromARGB(255, 41, 68, 53),
+                  decoration: TextDecoration.underline,
+                  decorationColor: Color.fromARGB(255, 41, 68, 53),
+                ),
+                child: Text('Warme hapjes', textAlign: TextAlign.left),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Text(
+                '- warme gehaktballetjes met verse kruiden\n\n'
+                '- malse kipstukjes in satesaus\n\n'
+                '- mini pastaschoteltje Bolognese\n\n'
+                '- mini pastaschoteltje vegetarisch\n\n'
+                '* de hapjes gaan per 10 stuks minimaal\n\n'
+                '* de hapjes kunnen in overleg worden opgehaald op ons kasteel (bezorgen in overleg)\n\n'
+                '* graag 48 uur van te voren bestellen (last minute in overleg)\n\n',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontFamily: "CustomFont",
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal,
+                  color: Color.fromARGB(255, 41, 68, 53),
+                  decoration: TextDecoration.none,
+                ),
+              ),
+            ),
           ],
         ),
       ),
