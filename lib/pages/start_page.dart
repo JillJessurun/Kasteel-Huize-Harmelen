@@ -16,11 +16,11 @@ class _StartPageState extends State<StartPage> {
     super.initState();
 
     // Delay for 2 seconds, then navigate to HomePage with a fade-in transition
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(milliseconds: 1500), () {
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
-          transitionDuration: Duration(seconds: 1),
+          transitionDuration: Duration(seconds: 2),
           pageBuilder: (context, animation, secondaryAnimation) => HomePage(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             var opacityAnimation = Tween(begin: 0.0, end: 1.0).animate(
@@ -59,7 +59,7 @@ class Background extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/Start.png"),
+                image: AssetImage("assets/images/Start2.png"),
                 fit: BoxFit.cover,
               ),
             ),
